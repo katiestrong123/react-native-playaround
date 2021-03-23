@@ -10,13 +10,13 @@ export default function ItemScreen() {
       <MaterialCommunityIcons
         style={styles.closeIcon}
         name="close"
-        size={30}
+        size={35}
         color="white"
       />
       <MaterialCommunityIcons
         style={styles.deleteIcon}
         name="trash-can-outline"
-        size={30}
+        size={35}
         color="white"
       />
       <Image
