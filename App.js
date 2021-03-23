@@ -3,6 +3,8 @@ import { View, Text } from "react-native";
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ItemScreen from "./app/screens/ItemScreen";
+import AppText from "./app/components/AppText";
+import Heading from "./app/components/Heading";
 
 export default function App() {
   return (
@@ -13,19 +15,11 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text
-        style={{
-          fontSize: 30,
-          fontStyle: "italic",
-          fontWeight: "600",
-          color: "pink",
-          textTransform: "capitalize",
-          textAlign: "center",
-          lineHeight: 30,
-        }}
-      >
+      <Heading>
         I love React Native. This is my first app, wudduya think?
-      </Text>
+      </Heading>
+
+      <AppText>This is the app text</AppText>
     </View>
   );
 }
