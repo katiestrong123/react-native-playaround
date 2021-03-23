@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ItemScreen from "./app/screens/ItemScreen";
@@ -13,32 +13,19 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
+      <Text
         style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          borderWidth: 10,
-          borderColor: "pink",
-          borderRadius: 50,
-          shadowColor: "grey",
-          shadowOffset: { width: 10, height: 10 },
-          shadowOpacity: 1,
-          shadowRadius: 10,
-          padding: 25,
+          fontSize: 30,
+          fontStyle: "italic",
+          fontWeight: "600",
+          color: "pink",
+          textTransform: "capitalize",
+          textAlign: "center",
+          lineHeight: 30,
         }}
       >
-        <View
-          style={{
-            backgroundColor: "gold",
-            width: 30,
-            height: 30,
-          }}
-        ></View>
-      </View>
-      <View>
-        
-      </View>
+        I love React Native. This is my first app, wudduya think?
+      </Text>
     </View>
   );
 }
