@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ItemScreen from "./app/screens/ItemScreen";
@@ -20,6 +21,10 @@ export default function App() {
       </Heading>
 
       <AppText>This is the app text</AppText>
+
+      <MaterialCommunityIcons name="email" size={60} color="hotpink" />
+      <MaterialCommunityIcons name="instagram" size={60} color="hotpink" />
+      <MaterialCommunityIcons name="twitter" size={60} color="hotpink" />
     </View>
   );
 }
