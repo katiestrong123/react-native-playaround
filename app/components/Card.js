@@ -3,18 +3,15 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
-function Card({ children }) {
+function Card({ title, subTitle, userName, itemImage, numberOfListings }) {
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.cardContainer}>
-          <Image
-            style={styles.image}
-            source={require("../assets/redJacket.jpeg")}
-          />
-          <View style={styles.text}>
-            <Text>Red Jacket for sale!</Text>
-            <AppText>$100</AppText>
+        <View style={styles.card}>
+          <Image style={styles.image} source={itemImage} />
+          <View style={styles.detailsContainer}>
+            <AppText style={styles.title}>{title}</AppText>
+            <AppText style={styles.subTitle}>{subTitle}</AppText>
           </View>
         </View>
       </View>
@@ -24,29 +21,38 @@ function Card({ children }) {
           style={styles.userImage}
           source={require("../assets/cass.png")}
         />
-        <Text style={styles.userName}>Cassia Briscoe</Text>
-        <Text style={styles.userListings}>5 Listings</Text>
+        <Text style={styles.userName}>{userName}</Text>
+        <Text style={styles.userListings}>{numberOfListings} Listings</Text>
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  card: {
+    borderRadius: 15,
+    backgroundColor: colors.white,
+    marginBottom: 20,
+    overflow: "hidden",
+  },
   container: {
     backgroundColor: "#f8f4f4",
-  },
-  cardContainer: {
-    borderRadius: "15px",
-    backgroundColor: colors.white,
-    margin: 20,
+    padding: 20,
+    paddingTop: 100,
   },
   image: {
-    borderRadius: "15px",
     height: 300,
     weight: 600,
   },
-  text: {
-    margin: 20,
+  detailsContainer: {
+    padding: 20,
+  },
+  subTitle: {
+    color: colors.secondary,
+    fontWeight: "bold",
+  },
+  title: {
+    marginBottom: 7,
   },
   user: {
     margin: 20,

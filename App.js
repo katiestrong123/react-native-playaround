@@ -10,9 +10,14 @@ import AppButton from "./app/components/AppButton";
 
 export default function App() {
   return (
-    <WelcomeScreen />
+    // <WelcomeScreen />
     // <ItemScreen />
-    // <Card />
-   
+    <Card
+      title={"Red Jacket for sale!"}
+      subTitle={"£100"}
+      userName={"Cassia Briscoe"}
+      numberOfListings={5}
+      itemImage={require("./app/assets/redJacket.jpeg")}
+    />
   );
 }
