@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "My first attempt playing around with react native. A mobile app market place for selling stuff you are done with! "
   }
 }
