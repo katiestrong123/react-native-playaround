@@ -7,13 +7,12 @@ function Heading({ children }) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30,
-    fontStyle: "italic",
-    fontWeight: "600",
-    color: "pink",
+    fontSize: 15,
+    fontWeight: "700",
+    color: "#000",
     textTransform: "capitalize",
     textAlign: "center",
-    lineHeight: 30,
+    lineHeight: 50,
   },
 });
 

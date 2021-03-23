@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Button,
-} from "react-native";
+import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
+
+// import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../config/colors";
+import Heading from "../components/Heading";
 
 function WelcomeScreen() {
   return (
@@ -15,8 +12,8 @@ function WelcomeScreen() {
       source={require("../assets/bground.jpeg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo.jpeg")} />
-        <Text>Sell what you don't need</Text>
+        <Image style={styles.logo} source={require("../assets/logo.png")} />
+        <Heading>Sell what you don't need</Heading>
       </View>
 
       <View style={styles.login}>Login</View>
@@ -32,8 +29,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    height: 100,
-    width: 100,
+    height: 80,
+    width: 80,
   },
   logoContainer: {
     position: "absolute",
@@ -41,14 +38,30 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   login: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
+    width: "80%",
+    height: 40,
+    backgroundColor: colors.primary,
+    textAlign: "center",
+    color: colors.white,
+    borderRadius: "25px",
+    marginBottom: 15,
+    paddingTop: 10,
+    textTransform: "uppercase",
+    fontFamily: "Avenir",
+    fontWeight: 600,
   },
   register: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
+    width: "80%",
+    height: 40,
+    backgroundColor: colors.secondary,
+    textAlign: "center",
+    color: colors.white,
+    borderRadius: "25px",
+    marginBottom: 25,
+    paddingTop: 10,
+    textTransform: "uppercase",
+    fontFamily: "Avenir",
+    fontWeight: 600,
   },
 });
 
