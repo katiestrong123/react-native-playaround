@@ -22,9 +22,44 @@ export default function App() {
 
       <AppText>This is the app text</AppText>
 
-      <MaterialCommunityIcons name="email" size={60} color="hotpink" />
-      <MaterialCommunityIcons name="instagram" size={60} color="hotpink" />
-      <MaterialCommunityIcons name="twitter" size={60} color="hotpink" />
+      <View style={styles.icons}>
+        <MaterialCommunityIcons
+          style={styles.email}
+          name="email"
+          size={60}
+          color="hotpink"
+        />
+        <MaterialCommunityIcons
+          style={styles.insta}
+          name="instagram"
+          size={60}
+          color="hotpink"
+        />
+        <MaterialCommunityIcons
+          style={styles.twitter}
+          name="twitter"
+          size={60}
+          color="hotpink"
+        />
+      </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  email: {
+    position: "absolute",
+    top: 10,
+    left: 40,
+  },
+  insta: {
+    position: "absolute",
+    top: 10,
+    left: -40,
+  },
+  twitter: {
+    position: "absolute",
+    top: 10,
+    right: 50,
+  },
+});
