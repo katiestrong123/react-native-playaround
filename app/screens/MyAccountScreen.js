@@ -1,24 +1,40 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "../components/Screen";
 import UserHeader from "../components/UserHeader";
+import colors from "../config/colors";
+import AppText from "../components/AppText";
+import LogOut from "../components/LogOut";
+import MyListings from "../components/MyListings";
+import MyMessages from "../components/MyMessages";
+import ListItemSeprator from "../components/ListItemSeprator";
 
 function MyAccountScreen(props) {
   return (
     <Screen>
-      <View>
+      <View style={styles.light}>
         <UserHeader />
 
-        {/* there will be a banner at the top on of the screen with user information inc icon, name and email */}
-        {/* There will be a button that directs the user to my listings  */}
+        <MyListings />
+        <ListItemSeprator />
+        <MyMessages />
+        {/* A button that directs the user to my listings  */}
         {/* <ListItemSeprator /> */}
         {/* There will be a button that directs the user to my messages  */}
-        {/* There will be a log out button  */}
-        {/* this will all be within a grey screen view */}
+
+        <LogOut />
       </View>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.light,
+    flex: 1,
+  },
+});
 
 export default MyAccountScreen;
