@@ -11,6 +11,7 @@ import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import MyAccountScreen from "./app/screens/MyAccountScreen";
 import UserHeader from "./app/components/UserHeader";
+import ListingsScreen from "./app/screens/ListingsScreen";
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
     // <ViewImageScreen />
     // <ListingDetailsScreen />
     // <MessagesScreen/>
-    <MyAccountScreen />
-    // <UserHeader />
+    // <MyAccountScreen />
+    <ListingsScreen />
   );
 }

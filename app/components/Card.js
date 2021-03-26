@@ -15,7 +15,7 @@ function Card({ title, subTitle, userName, itemImage, numberOfListings }) {
           </View>
         </View>
       </View>
-
+      {/* 
       <View style={styles.user}>
         <Image
           style={styles.userImage}
@@ -23,7 +23,7 @@ function Card({ title, subTitle, userName, itemImage, numberOfListings }) {
         />
         <Text style={styles.userName}>{userName}</Text>
         <Text style={styles.userListings}>{numberOfListings} Listings</Text>
-      </View>
+      </View> */}
     </>
   );
 }
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#f8f4f4",
     padding: 20,
-    paddingTop: 100,
+    paddingTop: 20,
   },
   image: {
     height: 300,
