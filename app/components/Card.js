@@ -15,8 +15,8 @@ function Card({ title, subTitle, userName, itemImage, numberOfListings }) {
           </View>
         </View>
       </View>
-      {/* 
-      <View style={styles.user}>
+
+      {/* <View style={styles.user}>
         <Image
           style={styles.userImage}
           source={require("../assets/cass.png")}

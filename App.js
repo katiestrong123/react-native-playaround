@@ -14,8 +14,5 @@ import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 
 export default function App() {
-  return (
-  
-    <AccountScreen />
-  );
+  return <ListingsScreen />;
 }

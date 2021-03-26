@@ -1,52 +1,63 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 
 import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
-function ListingsScreen(title, subTitle, itemImage) {
+import ItemScreen from "./ViewImageScreen";
+
+const listings = [
+  {
+    id: 1,
+    title: "Red jacket for sale!",
+    subTitle: "100",
+    itemImage: require("../assets/redJacket.jpeg"),
+  },
+  {
+    id: 2,
+    title: "Graphic basball cap",
+    subTitle: "15",
+    itemImage: require("../assets/hat.jpeg"),
+  },
+  {
+    id: 3,
+    title: "Black bomber jacket",
+    subTitle: "35",
+    itemImage: require("../assets/bomber.jpeg"),
+  },
+];
+
+function ListingsScreen(props) {
   return (
-    <Screen>
-      <View style={styles.container}>
-        <View style={styles.listItem}>
+    <Screen style={styles.screen}>
+      <FlatList
+        data={listings}
+        keyExtractor={(listings) => listings.id.toString()}
+        renderItem={({ item }) => (
           <Card
-            title="Red jacket for sale!"
-            subTitle="£100"
-            itemImage={require("../assets/redJacket.jpeg")}
+            title={item.title}
+            subTitle={"£" + item.subTitle}
+            itemImage={item.itemImage}
           />
-        </View>
-        <View style={styles.listItem}>
-          <Card
-            title="Graphic basball cap"
-            subTitle="£15"
-            itemImage={require("../assets/hat.jpeg")}
-          />
-        </View>
-        <View style={styles.listItem}>
-          <Card
-            title="Black bomber jacket"
-            subTitle="£45"
-            itemImage={require("../assets/bomber.jpeg")}
-          />
-        </View>
-        {/* This will render all the list items */}
-        {/* it will be with a screen view */}
-        {/* The list items will be touchable components */}
-      </View>
+        )}
+      />
+
+      {/* This will render all the list items */}
+      {/* it will be with a screen view */}
+      {/* The list items will be touchable components */}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.light,
-    flex: 1,
-  },
   listItem: {
-    // margin: 10,
     borderRadius: 30,
     overflow: "hidden",
     backgroundColor: colors.white,
+  },
+  screen: {
+    padding: 20,
+    backgroundColor: colors.light,
   },
 });
 

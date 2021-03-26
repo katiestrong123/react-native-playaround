@@ -3,7 +3,6 @@ import { View, StyleSheet, FlatList } from "react-native";
 
 import Screen from "../components/Screen";
 import colors from "../config/colors";
-import AppText from "../components/AppText";
 import ListItemSeprator from "../components/ListItemSeprator";
 import ListItem from "../components/ListItem";
 import Icon from "../components/Icon";
@@ -56,9 +55,7 @@ function MyAccountScreen(props) {
       </View>
       <ListItem
         title="Log Out"
-        IconComponent={
-          <Icon name="logout" backgroundColor={colors.duckGrey} />
-        }
+        IconComponent={<Icon name="logout" backgroundColor={colors.duckGrey} />}
       />
     </Screen>
   );
