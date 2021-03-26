@@ -13,8 +13,8 @@ import ListItemSeprator from "../components/ListItemSeprator";
 
 function MyAccountScreen(props) {
   return (
-    <Screen>
-      <View style={styles.light}>
+    <Screen style={styles.container}>
+      <View>
         <UserHeader />
 
         <MyListings />
