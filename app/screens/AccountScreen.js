@@ -40,10 +40,11 @@ function MyAccountScreen(props) {
         <FlatList
           data={menuItems}
           keyExtractor={(menuItems) => menuItems.title}
+          ItemSeparatorComponent={ListItemSeprator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
-              ImageComponent={
+              IconComponent={
                 <Icon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
@@ -52,21 +53,19 @@ function MyAccountScreen(props) {
             />
           )}
         />
-
-        <View>
-          <ListItem
-            title="Log Out"
-            ImageComponent={<Icon name="logout" backgroundColor="#90a5a9" />}
-          />
-        </View>
       </View>
+      <ListItem
+        title="Log Out"
+        IconComponent={
+          <Icon name="logout" backgroundColor={colors.duckGrey} />
+        }
+      />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
     marginVertical: 20,
     flex: 1,
   },
