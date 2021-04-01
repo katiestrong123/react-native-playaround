@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { Text, Switch } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
+import AppPicker from "./app/components/AppPicker";
 import AppTextInput from "./app/components/AppTextInput";
 
 import Screen from "./app/components/Screen";
 
 export default function App() {
-  const [firstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
-      <Text>{firstName}</Text>
-      <AppTextInput placeholder="Username" icon="email" />
+      <Switch value={isNew} onValueChange={(newValue) => setIsNew} />
+      <AppPicker icon="apps" placeholder="Catergory" />
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }
