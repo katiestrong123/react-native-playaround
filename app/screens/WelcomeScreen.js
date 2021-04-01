@@ -3,7 +3,6 @@ import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
 
 // import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import Heading from "../components/Heading";
 import AppButton from "../components/AppButton";
 
 function WelcomeScreen() {
