@@ -1,30 +1,41 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, Modal, Button } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { TextInput } from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
+import Screen from "./Screen";
 
 function AppPicker({ icon, placeholder, ...otherProps }) {
+  const [modalVisable, setModalVisable] = useState(false);
   return (
-    <View style={styles.container}>
-      {icon && (
-        <MaterialCommunityIcons
-          name={icon}
-          sie={20}
-          color={defaultStyles.colors.medium}
-          style={styles.icon}
-        />
-      )}
-      <AppText style={styles.text}>{placeholder}</AppText>
-      <MaterialCommunityIcons
-        name="chevron-down"
-        sie={20}
-        color={defaultStyles.colors.medium}
-        style={styles.icon}
-      />
-    </View>
+    <>
+      <TouchableWithoutFeedback onPress={() => setModalVisable(true)}>
+        <View style={styles.container}>
+          {icon && (
+            <MaterialCommunityIcons
+              name={icon}
+              sie={20}
+              color={defaultStyles.colors.medium}
+              style={styles.icon}
+            />
+          )}
+          <AppText style={styles.text}>{placeholder}</AppText>
+          <MaterialCommunityIcons
+            name="chevron-down"
+            sie={20}
+            color={defaultStyles.colors.medium}
+            style={styles.icon}
+          />
+        </View>
+      </TouchableWithoutFeedback>
+      <Modal visable={modalVisable} animationType="slide">
+        <Screen>
+          <Button title="Close" onPress={() => setModalVisable(false)} />
+        </Screen>
+      </Modal>
+    </>
   );
 }
 
